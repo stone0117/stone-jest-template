@@ -16,5 +16,5 @@ if (require.main === module) {
 }
 
 function destinationPath() {
-  return resolve('t001-jest')
+  return resolve('t002-jest')
 }

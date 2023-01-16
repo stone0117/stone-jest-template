@@ -1,16 +1,16 @@
 module.exports = {
-  preset: '@vue/cli-plugin-unit-jest',
+  verbose: true,
+  preset : '@vue/cli-plugin-unit-jest',
   ///
   globals           : {
     OS_ID: 1001,
   },
-  roots             : [],
   testMatch         : [
-    '<rootDir>/__tests__/**/*.test.js',
-    '<rootDir>/__tests__/**/*.spec.js',
-    '<rootDir>/tests/**/*.spec.js',
+    // '**/tests/unit/**/*.spec.[jt]s?(x)',
+    // '**/__tests__/*.[jt]s?(x)',
+    '<rootDir>/tests/unit/**/*.spec.[jt]s?(x)',
+    '<rootDir>/__tests__/*.[jt]s?(x)',
   ],
   setupFiles        : ['<rootDir>/jest.env.js'],
-  verbose           : true,
   setupFilesAfterEnv: ['<rootDir>/jest.console.js'],
 }
