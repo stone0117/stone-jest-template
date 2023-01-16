@@ -15,7 +15,8 @@
   "dependencies": {
     "axios": "0.18.1",
     "jest": "24.9.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "jquery": "^3.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",

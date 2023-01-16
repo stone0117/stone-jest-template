@@ -1,4 +1,10 @@
-module.exports = {
+// noinspection JSLastCommaInObjectLiteral
+
+const fs   = require('fs')
+const path = require('path')
+
+// language=js
+const content = `module.exports = {
   // For a detailed explanation regarding each configuration property, visit:
   // 有关每个配置属性的详细说明，请访问
   // https://jestjs.io/docs/en/configuration.html
@@ -6,9 +12,8 @@ module.exports = {
   // All imported modules in your tests should be mocked automatically
   // 测试中的所有导入模块都应自动进行模拟
   // automock: false,
-  // automock: true,
 
-  // Stop running tests after `n` failures
+  // Stop running tests after \`n\` failures
   // “n”次失败后停止运行测试
   // bail: 0,
 
@@ -34,7 +39,7 @@ module.exports = {
 
   // The directory where Jest should output its coverage files
   // Jest应输出其覆盖范围文件的目录
-  coverageDirectory: 'coverage',
+  // coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // 用于跳过覆盖率收集的正则表达式模式字符串数组
@@ -172,19 +177,16 @@ module.exports = {
 
   // The test environment that will be used for testing
   // 将用于测试的测试环境
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: "jest-environment-jsdom",
   // testEnvironment: "node",
 
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
   // 此选项设置 jsdom 环境的 URL。它反映在 location.href 等属性中
-  // testURL: 'http://localhost',
+  testURL: "http://localhost",
 
   // Options that will be passed to the testEnvironment
   // 将传递给 testEnvironment 的选项
   // testEnvironmentOptions: {},
-  // testEnvironmentOptions: {
-  //   url: 'https://www.baidu.com?fps=1',
-  // },
 
   // Adds a location field to test results
   // 向测试结果添加位置字段
@@ -196,7 +198,7 @@ module.exports = {
     // "**/__tests__/**/*.[jt]s?(x)",
     // "**/?(*.)+(spec|test).[tj]s?(x)"
     '<rootDir>/tests/unit/**/*.(spec|test).[jt]s?(x)',
-    '<rootDir>/__tests__/*.[jt]s?(x)',
+    '<rootDir>/__tests__/*.[jt]s?(x)'
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
@@ -224,12 +226,6 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   // 从正则表达式到转换器路径的映射
   // transform: null,
-  transform: {
-    // process *.vue files with vue-jest
-    '^.+\\.vue$'                                                : require.resolve('vue-jest'),
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': require.resolve('jest-transform-stub'),
-    '^.+\\.jsx?$'                                               : require.resolve('babel-jest'),
-  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // 与所有源文件路径匹配的正则表达式模式字符串数组，匹配的文件将跳过转换
@@ -252,4 +248,6 @@ module.exports = {
   // Whether to use watchman for file crawling
   // 是否使用watchman进行文件爬取
   // watchman: true,
-}
+}`
+
+fs.writeFileSync('jest.config.js', content)
